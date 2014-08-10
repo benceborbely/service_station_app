@@ -1,4 +1,4 @@
-<form role="form" action="index.php?controller=index&action=signin" method="POST">
+<form role="form" action="index.php?controller=index&action=index" method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Email:</label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Írja be email címét">

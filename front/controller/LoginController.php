@@ -1,11 +1,9 @@
 <?php
 
-require_once(APP_PATH . '/entities/Client.php');
-
 class LoginController extends Controller
 {
 	
-	public function signinAction()
+	public function signupAction()
 	{
 		if( isset($_POST['submit']) && $_POST['password'] === $_POST['password2'] )
 		{
@@ -20,7 +18,7 @@ class LoginController extends Controller
 		}
 		else
 		{	
-			$this->renderForm('signin');
+			$this->render('signupForm');
 		}
 	}
 	
@@ -31,7 +29,7 @@ class LoginController extends Controller
 			$clientRepo = $this->entityManager->getRepository('Client');
 			$client = $clientRepo->findOneBy(array('email'=>$_POST['email']));
 			$this->entityManager->flush();
-			//var_dump($client);die();
+
 			if( isset($client) )
 			{
 				if( $_POST['password'] === $client->getPassword() )
@@ -46,21 +44,21 @@ class LoginController extends Controller
 						'phone_number' => $client->getPhoneNumber()
 					);
 
-					$this->renderForm('client',$clientData);
+					$this->render('clientForm',$clientData);
 				}
 				else
 				{
-					$this->renderForm('login');
+					$this->render('loginForm');
 				}
 			}
 			else
 			{
-				$this->renderForm('login');
+				$this->render('loginForm');
 			}
 		}
 		else
 		{	
-			$this->renderForm('login');
+			$this->render('loginForm');
 		}
 	}
 	

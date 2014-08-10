@@ -1,7 +1,5 @@
 <?php
 
-require_once "entities/Client.php";
-
 class ClientController extends Controller
 {
 	private $client;
@@ -23,12 +21,12 @@ class ClientController extends Controller
 						'phone_number' => $this->client->getPhoneNumber()
 					);
 					
-					$this->renderForm('client',$clientData);
+					$this->render('clientForm',$clientData);
 			}
 		}
 		else
 		{	
-			$this->renderForm('login',array('email' => 'alma'));
+			$this->render('loginForm');
 		}
 	}
 	
@@ -55,14 +53,12 @@ class ClientController extends Controller
 			'phone_number' => $this->client->getPhoneNumber()
 			);
 					
-			echo 'Adatait sikeresen elmentettük!';
-					
-			$this->renderForm('client',$clientData);
+			$this->render('clientForm',$clientData);
 
 		}
 		else
 		{	
-			$this->renderForm('login',array('email' => 'alma'));
+			$this->render('loginForm');
 		}
 	}
 	

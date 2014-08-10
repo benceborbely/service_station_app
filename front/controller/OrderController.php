@@ -3,16 +3,9 @@
 class OrderController extends Controller
 {
 	
-	public function orderAction()
+	public function indexAction()
 	{
-		if( isset($_POST['submit']) )
-		{
-			
-		}
-		else
-		{	
-			$this->renderForm('order');
-		}
+			$this->render('orderForm');
 	}
 	
 }

@@ -23,9 +23,9 @@
 			else
 			{
 		?>
-			<li class="active"><a href="index.php?controller=login&action=signin">Regisztráció</a></li>
+			<li class="active"><a href="index.php?controller=login&action=signup">Regisztráció</a></li>
 			<li><a href="index.php?controller=login&action=login">Bejelentkezés</a></li>
-			<li><a href="index.php?controller=order&action=order">Megrendelés</a></li>
+			<li><a href="index.php?controller=order&action=index">Megrendelés</a></li>
 		<?php
 			}
 		?>
